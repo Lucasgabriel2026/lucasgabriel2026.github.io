@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Martins Portfolio</title>
+<meta name="description" content="Lucas Martins: Account Manager focused on retention and expansion. Portuguese, English and Spanish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0F1220; --bg2:#151A2C; --card:#1A2036; --line:#2A3150; --ink:#EEF0F7; --soft:#B4BAD0; --muted:#8A91AB;
+  --gold:#F5A524; --gold2:#FFC766; --goldbg:rgba(245,165,36,.10); --green:#4FD1A1; --greenbg:rgba(79,209,161,.10); --red:#FF8A7A;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--gold2)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(15,18,32,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+nav .name{font-family:var(--display);font-weight:700;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+nav .links{display:flex;gap:22px;font-size:14px}
+nav .links a{color:var(--soft);text-decoration:none}
+nav .links a:hover{color:var(--gold2)}
+@media (max-width:720px){nav .links{display:none}}
+
+/* hero */
+.hero{padding-block:84px 56px;display:grid;gap:26px}
+.hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;letter-spacing:-.025em;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{font-size:clamp(17px,2vw,19.5px);color:var(--soft);max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13.5px;border:1px solid var(--line);background:var(--bg2);color:var(--soft);padding:5px 12px;border-radius:99px}
+.chip b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-block;font-weight:600;font-size:15px;padding:11px 20px;border-radius:8px;text-decoration:none}
+.btn.p{background:var(--gold);color:#16120A}
+.btn.p:hover{background:var(--gold2)}
+.btn.s{border:1px solid var(--line);color:var(--ink)}
+.btn.s:hover{border-color:var(--gold)}
+
+/* results */
+.results{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;background:var(--bg2);overflow:hidden}
+.res{padding:24px 22px;display:grid;gap:8px;align-content:start;border-left:1px solid var(--line)}
+.res:first-child{border-left:0}
+.res .big{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.res .big small{font-size:20px;color:var(--muted);font-weight:500}
+.res p{font-size:14px;color:var(--soft)}
+@media (max-width:860px){.results{grid-template-columns:1fr 1fr}.res:nth-child(3){border-left:0}.res:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:460px){.results{grid-template-columns:1fr}.res{border-left:0!important}.res+.res{border-top:1px solid var(--line)}}
+.fineprint{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* sections */
+section{padding-block:76px 0}
+.sec-head{display:grid;gap:10px;margin-bottom:30px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.015em}
+.sec-head p{color:var(--soft);max-width:64ch}
+
+/* cases */
+.cases{display:grid;gap:18px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr 1.45fr;gap:28px}
+.case .left{display:grid;gap:12px;align-content:start}
+.case .num{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.case h3{font-size:24px;font-weight:700}
+.case .tag{justify-self:start;font-family:var(--mono);font-size:12px;color:var(--green);background:var(--greenbg);padding:3px 9px;border-radius:5px}
+.case .outcome{font-family:var(--display);font-size:30px;font-weight:700;color:var(--gold);line-height:1.05}
+.case .outcome span{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;color:var(--soft);margin-top:6px;line-height:1.45}
+.rows{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:110px 1fr;gap:14px;font-size:15px}
+.row b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;padding-top:3px}
+.row p{color:var(--soft)}
+.row.fit{border-top:1px dashed var(--line);padding-top:14px}
+.row.fit b{color:var(--gold)}
+.row.fit p{color:var(--ink)}
+@media (max-width:820px){.case{grid-template-columns:1fr;gap:20px;padding:22px}.row{grid-template-columns:1fr;gap:2px}}
+
+/* plan */
+.segs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.seg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:8px;align-content:start;border-top:3px solid var(--c)}
+.seg .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.seg h3{font-size:18px;font-weight:700}
+.seg p{font-size:14px;color:var(--soft)}
+@media (max-width:900px){.segs{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.segs{grid-template-columns:1fr}}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ph{padding:20px;display:grid;gap:6px;align-content:start;background:var(--bg2);border-left:1px solid var(--line)}
+.ph:first-child{border-left:0}
+.ph .d{font-family:var(--mono);font-size:12.5px;color:var(--gold)}
+.ph h3{font-size:17px;font-weight:700}
+.ph p{font-size:14px;color:var(--soft)}
+@media (max-width:760px){.phases{grid-template-columns:1fr}.ph{border-left:0}.ph+.ph{border-top:1px solid var(--line)}}
+.measure{margin-top:18px;padding:18px 20px;border-radius:12px;background:var(--goldbg);border:1px solid rgba(245,165,36,.35);font-size:15px;color:var(--ink)}
+
+/* experience */
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 30px 28px;display:grid;gap:6px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+.job:first-child::before{background:var(--gold)}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.job h3{font-size:20px;font-weight:700}
+.job h3 span{font-family:var(--body);font-weight:400;font-size:15px;color:var(--soft)}
+.job p{color:var(--soft);max-width:70ch;font-size:15px}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:10px;align-content:start}
+.tool h3{font-size:16px;font-weight:700}
+.tool .chips{gap:6px}
+.tool .chip{font-size:13px;padding:4px 10px}
+@media (max-width:760px){.tools{grid-template-columns:1fr}}
+
+/* footer */
+footer{margin-top:84px;border-top:1px solid var(--line);padding-block:48px 56px}
+footer .wrap{display:grid;gap:18px}
+footer h2{font-size:clamp(26px,4vw,36px);font-weight:700}
+footer .contact{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px;color:var(--soft)}
+footer .note{font-size:13px;color:var(--muted);max-width:72ch}
+</style>
+
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Lucas Martins</a>
+    <div class="links">
+      <a href="#results">Results</a>
+      <a href="#work">Case studies</a>
+      <a href="#latam">LATAM approach</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top" class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">Account Manager · Retention &amp; Expansion · LATAM</span>
+    <h1>I find customers about to leave, <em>bring them back</em>, and prove it with data.</h1>
+    <p class="lede">3+ years at Adviqo and Ingenio, from multilingual support to owning retention for our most valuable customers. I build the signals, the outreach and the measurement, so a small team can work a large base.</p>
+    <div class="chips">
+      <span class="chip"><b>Português</b> · native</span>
+      <span class="chip"><b>English</b> · fluent</span>
+      <span class="chip"><b>Español</b> · fluent</span>
+      <span class="chip">Based in Brazil</span>
+    </div>
+    <div class="cta">
+      <a class="btn p" href="#work">See the case studies</a>
+      <a class="btn s" href="#latam">How I'd approach LATAM</a>
+    </div>
+  </header>
+
+  <div id="results">
+    <div class="results">
+      <div class="res"><span class="big">42→70%</span><p>Win-back rate after I refocused outreach on customers who were truly at risk.</p></div>
+      <div class="res"><span class="big">62 <small>of 181</small></span><p>At-risk high-value customers who came back in one month, a 34% win-back rate.</p></div>
+      <div class="res"><span class="big">10→181</span><p>Accounts reached per month after moving outreach into automation, same team.</p></div>
+      <div class="res"><span class="big">6→11%</span><p>Reply rate in an A/B test of personalized outreach messages.</p></div>
+    </div>
+    <p class="fineprint">Internal results, 2026. Shared as rates and counts only. No customer or revenue data.</p>
+  </div>
+
+  <section id="work">
+    <div class="sec-head">
+      <span class="eyebrow">Case studies</span>
+      <h2>What I built, and what it changed</h2>
+      <p>Each one ends with what it means for a messaging platform with thousands of self-serve customers.</p>
+    </div>
+
+    <div class="cases">
+
+      <article class="case">
+        <div class="left">
+          <span class="num">01</span>
+          <h3>A retention process built from zero</h3>
+          <span class="tag">Retention · Measurement</span>
+          <p class="outcome">42% → 70%<span>win-back rate after refocusing the targeting, then scaled from 10 to 181 customers a month</span></p>
+        </div>
+        <div class="rows">
+          <div class="row"><b>Problem</b><p>Our highest-value customers left quietly. There was no process to spot them, contact them or check if it worked.</p></div>
+          <div class="row"><b>What I did</b><p>A three-step cycle. Find at-risk customers from spend and behavior signals. Reach out in a personal way. Measure with two rules only: did they pay again, and did their behavior improve. Opens and clicks don't count.</p></div>
+          <div class="row"><b>Result</b><p>Narrowing the targeting lifted the win-back rate from 42% to 70%. Scaled across two brands in one month: 181 contacted, 62 back. Next step: a holdout group to prove the lift is causal.</p></div>
+          <div class="row fit"><b>For you</b><p>The same loop works for self-serve accounts: signal, play, measure against a control group.</p></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="left">
+          <span class="num">02</span>
+          <h3>Automated risk alerts and a daily contact list</h3>
+          <span class="tag">Signals · Automation · Experiments</span>
+          <p class="outcome">4 signals<span>checked automatically every week, plus a daily dashboard of who to contact and why</span></p>
+        </div>
+        <div class="rows">
+          <div class="row"><b>Problem</b><p>Risk was found by reviewing data by hand, usually too late.</p></div>
+          <div class="row"><b>What I did</b><p>Built automated weekly alerts on product data for four signals: a drop in spending, a support conflict, a customer moving away from their usual provider, and a customer close to their spending limit. Added a daily dashboard of the top accounts with a ranked contact list. Then moved the outreach into a marketing automation platform and A/B tested the messages.</p></div>
+          <div class="row"><b>Result</b><p>The team starts each day with a list instead of a search. Outreach went from 10 to 181 accounts a month with the same team. Personalizing the message lifted replies from 6% to 11%. The spending-limit alert lets us reach customers before they hit the cap, right when they want to do more.</p></div>
+          <div class="row fit"><b>For you</b><p>"Close to a spending limit" is the same moment as "close to a contact limit": the right time to talk about a bigger plan.</p></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="left">
+          <span class="num">03</span>
+          <h3>Automated social media replies with ManyChat and Zendesk</h3>
+          <span class="tag">Customer Support role · 2022–2023</span>
+          <p class="outcome">2 brands<span>with Facebook and Instagram messages answered automatically</span></p>
+        </div>
+        <div class="rows">
+          <div class="row"><b>Problem</b><p>The brands' Facebook and Instagram inboxes were answered by hand, which was slow for customers and for the support team.</p></div>
+          <div class="row"><b>What I did</b><p>Built a ManyChat flow that answers incoming messages automatically, and connected it to Zendesk so the support team could see every conversation and step in when needed.</p></div>
+          <div class="row"><b>Result</b><p>Faster, consistent replies on social media, with less manual work for the team and full visibility in one place.</p></div>
+          <div class="row fit"><b>For you</b><p>I've been the customer of this kind of tool: connecting Meta channels, designing flows, getting the human handoff right. I had to join two tools to do it. respond.io does it in one.</p></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="latam">
+    <div class="sec-head">
+      <span class="eyebrow">How I'd approach LATAM self-serve</span>
+      <h2>Make the base visible, test, then scale what works</h2>
+      <p>A first draft of how I'd start as the first Account Manager for a base of self-serve customers who have never talked to a person.</p>
+    </div>
+
+    <div class="segs">
+      <div class="seg" style="--c:#F5A524"><span class="k">Never activated</span><h3>Activation rescue</h3><p>Paid, but WhatsApp isn't connected. A short setup call in their language.</p></div>
+      <div class="seg" style="--c:#FF8A7A"><span class="k">At risk</span><h3>Save before cancel</h3><p>Usage dropping or a failed payment. A WhatsApp check-in, then find the real cause.</p></div>
+      <div class="seg" style="--c:#4FD1A1"><span class="k">Ready to grow</span><h3>Right-size the plan</h3><p>Near contact, seat or AI limits. Show when the next plan costs less than overage.</p></div>
+      <div class="seg" style="--c:#8A91AB"><span class="k">Healthy</span><h3>Light-touch nurture</h3><p>Stable usage. Tips on features they don't use yet, and watch for triggers.</p></div>
+    </div>
+
+    <div class="phases">
+      <div class="ph"><span class="d">Days 1–30</span><h3>Learn</h3><p>Pull every account. Read 90 days of cancellations. Talk to ~25 customers in Brazil, Mexico and Colombia. Health score v1.</p></div>
+      <div class="ph"><span class="d">Days 31–60</span><h3>Test</h3><p>Two experiments with holdout groups: activation rescue and right-sizing. WhatsApp-first outreach in PT, ES and EN.</p></div>
+      <div class="ph"><span class="d">Days 61–90</span><h3>Scale</h3><p>Keep what moved revenue. Write playbook v1, automate the alerts, propose KPIs and the next hire.</p></div>
+    </div>
+
+    <p class="measure"><b>How I'd measure it:</b> expansion revenue, saved revenue and net revenue retention, always against a control group. Plus one behavior rule: did the account move to a healthier segment.</p>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Adviqo &amp; Ingenio, 2022 to today</h2>
+      <p>Online marketplaces in the US, Europe and Latin America, across three brands in English and Spanish.</p>
+    </div>
+    <div class="timeline">
+      <div class="job"><span class="when">2025 – today</span><h3>VIP Retention Account Manager</h3><p>Own retention for our highest-value customers across three brands, and personally follow the top 60 accounts every day. Built the risk alerts, the daily contact dashboard and the retention process. Use AI every day to analyze conversations and automate reporting.</p></div>
+      <div class="job"><span class="when">2023 – 2025</span><h3>Account Manager</h3><p>Managed key customer relationships. Worked with Product and Engineering on rollouts. Led localization and market adaptation for Latin America and Europe.</p></div>
+      <div class="job"><span class="when">2022 – 2023</span><h3>Customer Support Specialist</h3><p>Supported customers in English, Spanish and Portuguese. Automated the brands' Facebook and Instagram replies with ManyChat, connected to Zendesk. Saw first-hand that our best customers were leaving without anyone noticing, which shaped everything after.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Toolkit</span>
+      <h2>Tools I use every day</h2>
+    </div>
+    <div class="tools">
+      <div class="tool"><h3>Data and analytics</h3><div class="chips"><span class="chip">Mixpanel</span><span class="chip">Tableau</span><span class="chip">Snowflake</span><span class="chip">SQL</span></div></div>
+      <div class="tool"><h3>Customer engagement</h3><div class="chips"><span class="chip">Optimove</span><span class="chip">Zendesk</span><span class="chip">ManyChat</span><span class="chip">Slack</span><span class="chip">WhatsApp</span></div></div>
+      <div class="tool"><h3>Automation and AI</h3><div class="chips"><span class="chip">Python</span><span class="chip">APIs</span><span class="chip">Claude</span><span class="chip">Gemini</span></div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Let's talk.</h2>
+    <div class="contact">
+      <span>LinkedIn: <a href="https://www.linkedin.com/in/lucas-martins-763b5419b/" rel="noopener">linkedin.com/in/lucas-martins-763b5419b</a></span>
+      <span>Email: <a href="mailto:Lucas_gabriel11@hotmail.com">Lucas_gabriel11@hotmail.com</a></span>
+    </div>
+    <p class="note">All results come from internal reporting and are shared as rates and counts, with no customer names or revenue figures.</p>
+  </div>
+</footer>
+
+</body>
+</html>
